@@ -15,13 +15,20 @@ int main() {
 
 		switch (shapeChoice)
 		{
+		case 2:
+			printf_s("Triangle Angles selected.\n");
+			int triangleSides2[3] = { 0, 0, 0 };
+			int* triangleSidesPtr2 = getTriangleSides(triangleSides2);
+			char* result2 = analyzeTriangleAngles(triangleSidesPtr2[0], triangleSidesPtr2[1], triangleSidesPtr2[2]);
+			printf_s("%s\n", result2);
+			break;
 		case 1:
-			printf_s("Triangle selected.\n");
-			int triangleSides[3] = { 0, 0, 0 };
-			int* triangleSidesPtr = getTriangleSides(triangleSides);
+			printf_s("Triangle Type selected.\n");
+			int triangleSides1[3] = { 0, 0, 0 };
+			int* triangleSidesPtr1 = getTriangleSides(triangleSides1);
 			//printf_s("! %d\n", triangleSidesPtr[0]);
-			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
-			printf_s("%s\n", result);
+			char* result1 = analyzeTriangleType(triangleSidesPtr1[0], triangleSidesPtr1[1], triangleSidesPtr1[2]);
+			printf_s("%s\n", result1);
 			break;
 		case 0:
 			continueProgram = false;
@@ -43,7 +50,8 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
-	printf_s("1. Triangle\n");
+	printf_s("2. Triangle Angles\n");
+	printf_s("1. Triangle Type\n");
 	printf_s("0. Exit\n");
 
 	int shapeChoice;
