@@ -31,8 +31,8 @@ int main() {
 			break;
 		case 3:
 			printf_s("Rectangle analysis selected.\n");
-			int rectanglePoints[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-			
+			int rectanglePoints[8] = { 0, 0, -1, 2, 3, 4, 4, 2 };
+			checkIfRectangle(rectanglePoints);
 
 
 			break;

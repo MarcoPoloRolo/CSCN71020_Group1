@@ -9,10 +9,10 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
-	printf_s("3. Racetnagle analysis\n");
-	printf_s("2. Triangle Angles\n");
-	printf_s("1. Triangle Type\n");
 	printf_s("0. Exit\n");
+	printf_s("1. Triangle Type\n");
+	printf_s("2. Triangle Angles\n");
+	printf_s("3. Rectangle analysis\n");
 
 	int shapeChoice;
 

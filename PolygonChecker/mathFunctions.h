@@ -7,4 +7,4 @@
 char* analyzeTriangleType(int side1, int side2, int side3);
 char* analyzeTriangleAngles(int side1, int side2, int side3);
 int* getTriangleSides(int* triangleSides);
-bool checkIfRectangle(int[]);
+void checkIfRectangle(int[]);
