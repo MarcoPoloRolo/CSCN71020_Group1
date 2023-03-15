@@ -44,7 +44,7 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-void checkIfRectangle(int points[])
+bool checkIfRectangle(int points[])
 {
 	//Get vectors of every possible set of two points (6 total)
 	int vector1[2] = { points[2] - points[0], points[3] - points[1] };
@@ -54,7 +54,7 @@ void checkIfRectangle(int points[])
 	int vector5[2] = { points[6] - points[2], points[7] - points[3] };
 	int vector6[2] = { points[6] - points[4], points[7] - points[5] };
 	//Check dot product against each of other 3 points (2 values should result in 0 for it to be a rectangle)
-	int dotProductList[12];
+	int dotProductList[12] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 	dotProductList[0] = vector1[0] * vector2[0] + vector1[1] * vector2[1]; //If exactly 4 of these dot products result in 0, the points form a rectangle
 	dotProductList[1] = vector1[0] * vector3[0] + vector1[1] * vector3[1];
 	dotProductList[2] = vector2[0] * vector3[0] + vector2[1] * vector3[1];
@@ -87,4 +87,36 @@ void checkIfRectangle(int points[])
 		printf("False");//For debugging purposes; Remove later
 	}
 	return isRectangle;
+}
+
+int getRectanglePoints(int rectanglePoints[])
+{
+	for (int i = 0; i < 4; i++) //4 sets of x/y coords
+	{
+		printf("Enter the x coordinate of point %d: \n", i+1);
+		scanf_s("%d", &rectanglePoints[i*2]);
+		printf("Enter the y coordinate of point %d: \n", i+1);
+		scanf_s("%d", &rectanglePoints[(i*2)+1]);
+	}
+	return rectanglePoints;
+}
+
+double getRectanglePerimeter(int rectanglePoints[]) //Need to create function still
+{
+	double rectanglePerimeter = 0;
+
+
+
+
+	return (rectanglePerimeter);
+}
+
+double getRectangleArea(int rectanglePoints[]) //Need to create function still
+{
+	double rectangleArea = 0;
+
+
+
+
+	return(rectangleArea)
 }

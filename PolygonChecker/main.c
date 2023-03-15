@@ -31,8 +31,15 @@ int main() {
 			break;
 		case 3:
 			printf_s("Rectangle analysis selected.\n");
-			int rectanglePoints[8] = { 0, 0, -1, 2, 3, 4, 4, 2 };
-			checkIfRectangle(rectanglePoints);
+			int rectanglePoints[8] = { 0, 0, 1, 1, 0, 1, 1, 0 };
+			getRectanglePoints(rectanglePoints);
+			if (!checkIfRectangle(rectanglePoints))
+				printf("Those points do not form a rectangle.\n");
+			else
+			{
+				printf("The perimeter of this rectangle is %f.\n", getRectanglePerimeter(rectanglePoints));
+				printf("The area of this rectangle is %f.\n", getRectangleArea(rectanglePoints));
+			}
 
 
 			break;
