@@ -1,9 +1,4 @@
-#define _USE_MATH_DEFINES
-#include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
-
-#include "triangleSolver.h"
+#include "mathFunctions.h"
 
 char* analyzeTriangleType(int side1, int side2, int side3) {
 	char* result = "";
@@ -38,4 +33,20 @@ char* analyzeTriangleAngles(int side1, int side2, int side3) {
 	else
 		result = "Not a triangle.";
 	return result;
+}
+
+int* getTriangleSides(int* triangleSides) {
+	printf_s("Enter the three sides of the triangle: ");
+	for (int i = 0; i < 3; i++)
+	{
+		scanf_s("%d", &triangleSides[i]);
+	}
+	return triangleSides;
+}
+
+bool checkIfRectangle(int rectanglePoints[])
+{
+
+
+
 }
