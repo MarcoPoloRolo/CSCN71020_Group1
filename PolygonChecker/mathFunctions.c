@@ -1,5 +1,14 @@
 #include "mathFunctions.h"
 
+int* getTriangleSides(int* triangleSides) {
+	printf_s("Enter the three sides of the triangle: ");
+	for (int i = 0; i < 3; i++)
+	{
+		scanf_s("%d", &triangleSides[i]);
+	}
+	return triangleSides;
+}
+
 char* analyzeTriangleType(int side1, int side2, int side3) {
 	char* result = "";
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
@@ -35,15 +44,6 @@ char* analyzeTriangleAngles(int side1, int side2, int side3) {
 	return result;
 }
 
-int* getTriangleSides(int* triangleSides) {
-	printf_s("Enter the three sides of the triangle: ");
-	for (int i = 0; i < 3; i++)
-	{
-		scanf_s("%d", &triangleSides[i]);
-	}
-	return triangleSides;
-}
-
 bool checkIfRectangle(int points[])
 {
 	//Get vectors of every possible set of two points (6 total)
@@ -77,15 +77,9 @@ bool checkIfRectangle(int points[])
 	//Check if there are 4 zeroes
 	bool isRectangle;
 	if (dotProductCounter == 4)
-	{
 		isRectangle = true;
-		printf("True"); //For debugging purposes; Remove later
-	}
 	else
-	{
 		isRectangle = false;
-		printf("False");//For debugging purposes; Remove later
-	}
 	return isRectangle;
 }
 
@@ -101,22 +95,36 @@ int getRectanglePoints(int rectanglePoints[])
 	return rectanglePoints;
 }
 
-double getRectanglePerimeter(int rectanglePoints[]) //Need to create function still
+double getRectanglePerimeter(int points[]) //Need to create function still
 {
 	double rectanglePerimeter = 0;
-
-
-
-
+	//Get the three side lengths
+	double length1 =  sqrt(pow(points[2] - points[0], 2) + pow(points[3] - points[1], 2));
+	double length2 =  sqrt(pow(points[4] - points[0], 2) + pow(points[5] - points[1], 2));
+	double length3 =  sqrt(pow(points[6] - points[0], 2) + pow(points[7] - points[1], 2));
+	//The longest of these 3 is the hypotenuse and should not be used
+	if (length1 > length2 && length1 > length3)
+		rectanglePerimeter = (2 * length2) + (2 * length3);
+	else if (length2 > length3 && length2 > length1)
+		rectanglePerimeter = (2 * length1) + (2 * length3);
+	else
+		rectanglePerimeter = (2 * length1) + (2 * length2);
 	return (rectanglePerimeter);
 }
 
-double getRectangleArea(int rectanglePoints[]) //Need to create function still
+double getRectangleArea(int points[]) //Need to create function still
 {
 	double rectangleArea = 0;
-
-
-
-
-	return(rectangleArea)
+	//Get the three side lengths
+	double length1 = sqrt(pow(points[2] - points[0], 2) + pow(points[3] - points[1], 2));
+	double length2 = sqrt(pow(points[4] - points[0], 2) + pow(points[5] - points[1], 2));
+	double length3 = sqrt(pow(points[6] - points[0], 2) + pow(points[7] - points[1], 2));
+	//The longest of these 3 is the hypotenuse and should not be used
+	if (length1 > length2 && length1 > length3)
+		rectangleArea = length2 * length3;
+	else if (length2 > length3 && length2 > length1)
+		rectangleArea = length1 * length3;
+	else
+		rectangleArea = length1 * length2;
+	return(rectangleArea);
 }
