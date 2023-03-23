@@ -31,7 +31,7 @@ int main() {
 			break;
 		case 3:
 			printf_s("Rectangle analysis selected.\n");
-			int rectanglePoints[RECTANGLE_POINTS] = { 0, 0, 1, 1, 0, 1, 1, 0 };
+			int rectanglePoints[RECTANGLE_POINTS] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 			getRectanglePoints(rectanglePoints);
 			if (!checkIfRectangle(rectanglePoints))
 				printf("Those points do not form a rectangle.\n");

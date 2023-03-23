@@ -33,6 +33,9 @@ char* analyzeTriangleAngles(int side1, int side2, int side3) {
 	char* result = "";
 	if (side1 <= (side2 + side3) && side2 <= (side3 + side1) && side3 <= (side1 + side2)) //Checking if it would form a triangle
 	{
+		side1 = abs(side1); //Makes negative numbers positive, and continues program
+		side2 = abs(side2);
+		side3 = abs(side3);
 		double angle1, angle2, angle3;
 		angle1 = acos((pow(side1, 2) + pow(side2, 2) - pow(side3, 2)) / ( 2 * side1 * side2)) * (180 / M_PI); //Cos law reaarranged to find angle
 		angle2 = acos((pow(side2, 2) + pow(side3, 2) - pow(side1, 2)) / ( 2 * side2 * side3)) * (180 / M_PI);
