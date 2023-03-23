@@ -1,6 +1,8 @@
 #pragma once
 #define RADIANS_TO_DEGREES = 57.29557795131
 #define _USE_MATH_DEFINES
+#define TRIANGLE_SIDES 3
+#define RECTANGLE_POINTS 8
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>

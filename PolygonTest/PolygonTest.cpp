@@ -5,13 +5,13 @@ extern "C" char* analyzeTriangleType(int side1, int side2, int side3);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace PolygonTest
+namespace PolygonProgramTest
 {
-	TEST_CLASS(PolygonTest)
+	TEST_CLASS(TriangleTypeTests)
 	{
 	public:
 		
-		TEST_METHOD(AnalyzeTriangleTestONE)
+		TEST_METHOD(TestONE)
 		{
 			char* expectedTri = "Isosceles triangle";
 			int s1 = 3;
@@ -20,7 +20,7 @@ namespace PolygonTest
 			char* actualTri = analyzeTriangleType(s1, s2, s3);
 			Assert::AreEqual(expectedTri, actualTri);
 		}
-		TEST_METHOD(AnalyzeTriangleTestTWO)
+		TEST_METHOD(TestTWO)
 		{
 			char* expectedTri = "Equilateral triangle";
 			int s1 = 5;
@@ -29,7 +29,7 @@ namespace PolygonTest
 			char* actualTri = analyzeTriangleType(s1, s2, s3);
 			Assert::AreEqual(expectedTri, actualTri);
 		}
-		TEST_METHOD(AnalyzeTriangleTestTHREE)
+		TEST_METHOD(TestTHREE)
 		{
 			char* expectedTri = "Scalene triangle";
 			int s1 = 5;
@@ -39,7 +39,7 @@ namespace PolygonTest
 			Assert::AreEqual(expectedTri, actualTri);
 		}
 
-		TEST_METHOD(AnalyzeTriangleTestFOUR)
+		TEST_METHOD(TestFOUR)
 		{
 
 			char* expectedTri = "Not a triangle";
@@ -48,6 +48,51 @@ namespace PolygonTest
 			int s3 = 12;
 			char* actualTri = analyzeTriangleType(s1, s2, s3);
 			Assert::AreEqual(expectedTri, actualTri);
+		}
+	};
+	TEST_CLASS(TriangleAngleTests)
+	{
+		TEST_METHOD(TestONE)
+		{
+
+		}
+
+		TEST_METHOD(TestTWO)
+		{
+
+		}
+
+		TEST_METHOD(TestTHREE)
+		{
+
+		}
+
+		TEST_METHOD(TestFOUR)
+		{
+
+		}
+
+	};
+	TEST_CLASS(FourPointsTest)
+	{
+		TEST_METHOD(TestONE)
+		{
+
+		}
+
+		TEST_METHOD(TestTWO)
+		{
+
+		}
+
+		TEST_METHOD(TestTHREE)
+		{
+
+		}
+
+		TEST_METHOD(TestFOUR)
+		{
+
 		}
 	};
 }
