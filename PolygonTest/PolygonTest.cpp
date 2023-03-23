@@ -39,13 +39,13 @@ namespace PolygonTest
 			Assert::AreEqual(expectedTri, actualTri);
 		}
 
-		TEST_METHOD(analyzeTriangleAnglesFOUR)
+		TEST_METHOD(AnalyzeTriangleTestFOUR)
 		{
 
-			char* expectedTri = "Scalene triangle";
-			int s1 = 6;
-			int s2 = 6;
-			int s3 = 7;
+			char* expectedTri = "Not a triangle";
+			int s1 = 3;
+			int s2 = 3;
+			int s3 = 12;
 			char* actualTri = analyzeTriangleType(s1, s2, s3);
 			Assert::AreEqual(expectedTri, actualTri);
 		}
