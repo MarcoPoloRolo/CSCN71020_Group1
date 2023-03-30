@@ -116,7 +116,7 @@ namespace PolygonProgramTest
 	};
 	TEST_CLASS(RectangleArea)
 	{
-		TEST_METHOD(TestONE)
+		TEST_METHOD(AreaNegatives)
 		{
 			double ExpectedArea1 = 10;
 			int Rectangle1[8] = { -1, 0, 0, 2, 3, -2, 4, 0 };
@@ -124,7 +124,7 @@ namespace PolygonProgramTest
 			Assert::AreEqual(ExpectedArea1, Actual1);
 			//printf("lf", Actual1);
 		}
-		TEST_METHOD(TestTWO)
+		TEST_METHOD(AreaSquare)
 		{
 			double ExpectedArea2 = 4;
 			int Rectangle2[8] = { 4,4,2,2,4,2,2,4 };
@@ -134,7 +134,7 @@ namespace PolygonProgramTest
 	};
 	TEST_CLASS(RectanglePerimeter)
 		{
-			TEST_METHOD(TestONE)
+			TEST_METHOD(PerimeterNegatives)
 
 			{    
 				double ExpectedPerimeter1 = 13.4164;
@@ -144,7 +144,7 @@ namespace PolygonProgramTest
 				Assert::AreEqual(ExpectedPerimeter1, Actual1, 0.00001);
 				
 			}
-			TEST_METHOD(TestTWO)
+			TEST_METHOD(PerimeterSquare)
 			{
 				double ExpectedPerimeter2 = 8;
 				int Rectangle2[8] = { 4,4,2,2,4,2,2,4 };
