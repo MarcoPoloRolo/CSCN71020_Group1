@@ -5,6 +5,7 @@ extern "C" char* analyzeTriangleType(int side1, int side2, int side3);
 extern "C" bool checkIfRectangle(int points[]);
 extern "C" double getRectangleArea(int points[]);
 extern "C" double getRectanglePerimeter(int points[]);
+extern "C" char* analyzeTriangleAngles(int side1, int side2, int side3);
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace PolygonProgramTest
@@ -52,29 +53,54 @@ namespace PolygonProgramTest
 			Assert::AreEqual(expectedTri, actualTri);
 		}
 	};
+	
+
 	TEST_CLASS(TriangleAngleTests)
 	{
 		TEST_METHOD(TestONE)
 		{
-
+			char* ExpectedTri = "Not a triangle.";
+			int Input1 = 2;
+			int Input2 = 5;
+			int Input3 = 9;
+			char* ActualTri = analyzeTriangleAngles(Input1, Input2, Input3);
+			Assert::AreEqual(ExpectedTri, ActualTri);
 		}
 
 		TEST_METHOD(TestTWO)
 		{
+			char* ExpectedTri = "";
+			int Input1 = 4;
+			int Input2 = 7;
+			int Input3 = 5;
+			char* ActualTri = analyzeTriangleAngles(Input1, Input2, Input3);
+			Assert::AreEqual(ExpectedTri, ActualTri);
 
 		}
 
 		TEST_METHOD(TestTHREE)
 		{
+			char* ExpectedTri = "";
+			int Input1 = -7;
+			int Input2 = 7;
+			int Input3 = 12;
+			char* ActualTri = analyzeTriangleAngles(Input1, Input2, Input3);
+			Assert::AreEqual(ExpectedTri, ActualTri);
 
 		}
 
 		TEST_METHOD(TestFOUR)
 		{
+			char* ExpectedTri = "Not a triangle.";
+			int Input1 = -7;
+			int Input2 = -26;
+			int Input3 = -17;
+			char* ActualTri = analyzeTriangleAngles(Input1, Input2, Input3);
+			Assert::AreEqual(ExpectedTri, ActualTri);
 
 		}
-	
 	};
+
 	TEST_CLASS(FourPointsTest)
 	{
 
