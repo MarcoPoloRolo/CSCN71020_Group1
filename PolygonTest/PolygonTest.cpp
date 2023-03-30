@@ -57,7 +57,7 @@ namespace PolygonProgramTest
 
 	TEST_CLASS(TriangleAngleTests)
 	{
-		TEST_METHOD(TestONE)
+		TEST_METHOD(TestNotTriangle)
 		{
 			char* ExpectedTri = "Not a triangle.";
 			int Input1 = 2;
@@ -67,7 +67,7 @@ namespace PolygonProgramTest
 			Assert::AreEqual(ExpectedTri, ActualTri);
 		}
 
-		TEST_METHOD(TestTWO)
+		TEST_METHOD(TestScaleneAngles)
 		{
 			char* ExpectedTri = "";
 			int Input1 = 4;
@@ -78,7 +78,7 @@ namespace PolygonProgramTest
 
 		}
 
-		TEST_METHOD(TestTHREE)
+		TEST_METHOD(TestIscocelesNegative)
 		{
 			char* ExpectedTri = "";
 			int Input1 = -7;
@@ -89,7 +89,7 @@ namespace PolygonProgramTest
 
 		}
 
-		TEST_METHOD(TestFOUR)
+		TEST_METHOD(TestNegativeNotTriangle)
 		{
 			char* ExpectedTri = "Not a triangle.";
 			int Input1 = -7;
