@@ -17,15 +17,15 @@ int main() {
 			break;
 		case 1:
 			printf_s("Triangle Type selected.\n");
-			int triangleSides1[TRIANGLE_SIDES] = { 0, 0, 0 };
-			int* triangleSidesPtr1 = getTriangleSides(triangleSides1);
+			int case1sides[TRIANGLE_SIDES] = { 0, 0, 0 };
+			int* triangleSidesPtr1 = getTriangleSides(case1sides);
 			char* result1 = analyzeTriangleType(triangleSidesPtr1[0], triangleSidesPtr1[1], triangleSidesPtr1[2]);
 			printf_s("%s\n", result1);
 			break;
 		case 2:
 			printf_s("Triangle Angles selected.\n");
-			int triangleSides2[TRIANGLE_SIDES] = { 0, 0, 0 };
-			int* triangleSidesPtr2 = getTriangleSides(triangleSides2);
+			int case2sides[TRIANGLE_SIDES] = { 0, 0, 0 };
+			int* triangleSidesPtr2 = getTriangleSides(case2sides);
 			char* result2 = analyzeTriangleAngles(triangleSidesPtr2[0], triangleSidesPtr2[1], triangleSidesPtr2[2]);
 			printf_s("%s\n", result2);
 			break;
