@@ -1,7 +1,7 @@
 #include "mathFunctions.h"
 
 int* getTriangleSides(int* triangleSides) {
-	printf_s("Enter the three sides of the triangle: ");
+	printf_s("Enter the three sides of the triangle: "); //Input for triangle functions
 	for (int i = 0; i < 3; i++)
 	{
 		scanf_s("%d", &triangleSides[i]);
@@ -11,7 +11,7 @@ int* getTriangleSides(int* triangleSides) {
 
 char* analyzeTriangleType(int side1, int side2, int side3) {
 	char* result = "";
-	if (!((side2 + side3) && side2 <= (side3 + side1) && side3 <= (side1 + side2))) {
+	if (!((side2 + side3) && side2 <= (side3 + side1) && side3 <= (side1 + side2))) { //If one side length is longer than both the others, it will not forma triangle
 		result = "Not a triangle";
 	}
 	else if (side1 == side2 && side1 == side3) {
@@ -98,7 +98,7 @@ int getRectanglePoints(int rectanglePoints[])
 	return rectanglePoints;
 }
 
-double getRectanglePerimeter(int points[]) //Need to create function still
+double getRectanglePerimeter(int points[])
 {
 	double rectanglePerimeter = 0;
 	//Get the three side lengths
@@ -115,7 +115,7 @@ double getRectanglePerimeter(int points[]) //Need to create function still
 	return (rectanglePerimeter);
 }
 
-double getRectangleArea(int points[]) //Need to create function still
+double getRectangleArea(int points[])
 {
 	double rectangleArea = 0;
 	//Get the three side lengths
